@@ -17255,7 +17255,7 @@ BBClient.ready = function(input, callback, errback){
 };
 
 function providers(fhirServiceUrl, provider, callback, errback){
-
+console.log(fhirServiceUrl, 'qwqwq');
   // Shim for pre-OAuth2 launch parameters
   if (isBypassOAuth()){
     process.nextTick(function(){
@@ -17338,7 +17338,8 @@ function bypassOAuth(fhirServiceUrl, callback){
 }
 
 BBClient.authorize = function(params, errback){
-
+console.log("params");
+console.log(params);
   if (!errback){
     errback = function(){
         console.log("Failed to discover authorization URL given", params);
@@ -17429,7 +17430,7 @@ BBClient.authorize = function(params, errback){
 };
 
 BBClient.resolveAuthType = function (fhirServiceUrl, callback, errback) {
-
+console.log(fhirServiceUrl, 'asasa');
       Adapter.get().http({
          method: "GET",
          url: stripTrailingSlash(fhirServiceUrl) + "/metadata"
